@@ -182,8 +182,8 @@ namespace FileWatcher
                 Thread thread = new Thread(() => RunBatch(Path.Combine(fileDir, "BatchScript", "run.bat"), inputfile.File));
                 thread.Start();
 
-                Thread keepwindowup = new Thread(KeepWindowUp);
-                keepwindowup.Start();
+                //Thread keepwindowup = new Thread(KeepWindowUp);
+                //keepwindowup.Start();
                 //while (!thread.IsAlive) ; // Wait until the thread is in the background
                 //Thread.Sleep(3000);
                 //if (!this.Focused)
@@ -228,7 +228,7 @@ namespace FileWatcher
             RunScript batchscript = new RunScript();
             batchscript.Command = command;
             batchscript.Param = param;
-            batchscript.WindowState = FormWindowState.Minimized;
+            //batchscript.WindowState = FormWindowState.Minimized;
             if (File.Exists(batchscript.Command))
             {
                 try
